@@ -1,5 +1,5 @@
 flask
-opencv-python-headless
+opencv-python
 img2pdf
 yt-dlp
-gunicorn
+gunicorn; sys_platform != 'win32'
