@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube to PDF | Frame Extractor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-glow"></div>
+    
+    <main class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fa-brands fa-youtube"></i>
+                <h1>YT2PDF</h1>
+            </div>
+            <p class="tagline">Extract high-quality frames from any YouTube video into a PDF.</p>
+        </header>
+
+        <div class="card glass-panel">
+            <form id="convertForm">
+                <div class="input-group">
+                    <label for="url"><i class="fa-solid fa-link"></i> YouTube URL</label>
+                    <input type="url" id="url" name="url" placeholder="https://www.youtube.com/watch?v=..." required>
+                </div>
+
+                <div class="input-group">
+                    <label for="interval"><i class="fa-solid fa-clock"></i> Interval (seconds)</label>
+                    <div class="range-container">
+                        <input type="number" id="interval" name="interval" value="5" min="1" step="0.5" required>
+                        <span class="helper-text">Capture a frame every X seconds</span>
+                    </div>
+                </div>
+
+                <button type="submit" id="submitBtn" class="btn-primary">
+                    <span class="btn-text">Convert to PDF</span>
+                    <span class="btn-loader"><i class="fa-solid fa-circle-notch fa-spin"></i> Processing...</span>
+                </button>
+            </form>
+            
+            <div id="statusMessage" class="status-message"></div>
+        </div>
+
+        <footer class="footer">
+            <p>High Quality • Fast • Free</p>
+        </footer>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

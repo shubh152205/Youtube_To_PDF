@@ -1,0 +1,4 @@
+flask
+opencv-python
+img2pdf
+yt-dlp
